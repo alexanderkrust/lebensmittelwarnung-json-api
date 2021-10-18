@@ -29,7 +29,7 @@ router.get('/api/warnings', async (req, res) => {
   };
 
   const content = transform(items, meta);
-  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   res.status(200).send(content);
 });
