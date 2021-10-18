@@ -32,7 +32,9 @@ app.get('/warnings/:category?', async (req, res) => {
   };
 
   const content = transform(items, meta);
-  res.send(content);
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.status(200).send(content);
 });
 
 if (process.env.NODE_ENV === 'development') {

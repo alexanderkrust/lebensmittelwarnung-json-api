@@ -1,2 +1,3 @@
 require("ts-node").register({ files: true, transpileOnly: true });
-module.exports = require("./index.ts");
+const { app } = require("./index.ts");
+module.exports = app;
