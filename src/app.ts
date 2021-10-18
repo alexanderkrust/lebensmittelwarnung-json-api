@@ -14,6 +14,13 @@ app.use(
   }),
 );
 
+app.get('/api', (req, res) => {
+  const path = '/api/warnings';
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+});
+
 app.get('/api/warnings/:category?', async (req, res) => {
   const categoryParam = req.params.category as keyof CategoryType;
   const state = req.query.state as keyof StatesType;
