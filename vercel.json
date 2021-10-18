@@ -3,6 +3,6 @@
       { "source": "/api/(.*)", "destination": "/api" },
       { "source": "/api/(.*)", "destination": "/api/404.ts" },
       { "source": "/(.*)", "destination": "/api/404.ts" },
-      { "source": "", "destination": "/api/404.ts" }
+      { "source": "/", "destination": "/404.ts" }
     ]
 }

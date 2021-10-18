@@ -17,5 +17,7 @@ app.use(
 app.use(notFound);
 app.use(warnings);
 
+// TODO: return 404 on / path
+
 const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
