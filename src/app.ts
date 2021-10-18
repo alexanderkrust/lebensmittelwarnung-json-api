@@ -14,7 +14,7 @@ app.use(
   }),
 );
 
-app.get('/warnings/:category?', async (req, res) => {
+app.get('/api/warnings/:category?', async (req, res) => {
   const categoryParam = req.params.category as keyof CategoryType;
   const state = req.query.state as keyof StatesType;
   const url = getUrl({ category: categoryParam, state });
