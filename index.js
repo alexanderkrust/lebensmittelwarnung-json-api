@@ -3,6 +3,7 @@
 import express from "express";
 import morgan from "morgan";
 import warnings from "./api/warnings";
+import notFound from "./api/404";
 
 export const app = express();
 app.use(morgan("tiny"));
@@ -13,7 +14,8 @@ app.use(
   })
 );
 
-app.use("/api/warnings/:category?", warnings);
+app.use(notFound);
+app.use(warnings);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
