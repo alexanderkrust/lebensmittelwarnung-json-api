@@ -1,4 +1,6 @@
-require("ts-node").register({ files: true, transpileOnly: true });
-const { app } = require("../src/app.ts");
+/* eslint-disable @typescript-eslint/quotes */
+import { app } from "../src/app";
 
-module.exports = app;
+require("ts-node").register({ files: true, transpileOnly: true });
+
+export default app;
